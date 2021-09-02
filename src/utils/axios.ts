@@ -9,6 +9,14 @@ axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 axios.defaults.headers['Authorization'] = `${sessionStorage.getItem('token') || null}`
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
+axios.interceptors.request.use(req => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+        req.headers['Authorization'] = token;
+    }
+    return req;
+})
+
 axios.interceptors.response.use(res => {
     if (typeof res.data !== 'object') {
         Toast.show('服务端异常！')

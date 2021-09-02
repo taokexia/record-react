@@ -6,8 +6,10 @@ import { login, register } from "../../utils";
 import cx from "classnames";
 
 import styles from "./style.module.less";
+import { useHistory } from "react-router-dom";
 
 const Login: FunctionComponent = () => {
+  const history = useHistory();
   const captchaRef = useRef();
   const [username, setUsername] = useState<string | undefined>(""); // 账号
   const [password, setPassword] = useState<string | undefined>(""); // 密码
@@ -41,6 +43,8 @@ const Login: FunctionComponent = () => {
         });
         // 将 token 写入 sessionStorage
         sessionStorage.setItem("token", data.token);
+        history.push('/');
+        Toast.show("登录成功");
       } else {
         if (!verify) {
           Toast.show("请输入验证码");
