@@ -17,14 +17,14 @@ export type PopupTypeRef = {
 }
 
 export type TypeItem = {
-    id: string;
+    id: string|number;
     name: string;
 }
 
 // forwardRef 用于拿到父组件传入的 ref 属性，这样在父组件便能通过 ref 控制子组件。
 const PopupType = forwardRef<PopupTypeRef|undefined, PopupTypeProps>(({ onSelect }, ref) => {
   const [show, setShow] = useState(false); // 组件的显示和隐藏
-  const [active, setActive] = useState('all'); // 激活的 type
+  const [active, setActive] = useState<string|number>('all'); // 激活的 type
   const [expense, setExpense] = useState<Array<TypeItem>>([]); // 支出类型标签
   const [income, setIncome] = useState<Array<TypeItem>>([]); // 收入类型标签
 
@@ -52,7 +52,7 @@ const PopupType = forwardRef<PopupTypeRef|undefined, PopupTypeProps>(({ onSelect
   };
 
   // 选择类型回调
-  const choseType = (item: { id: string }) => {
+  const choseType = (item: { id: string|number }) => {
     setActive(item.id)
     setShow(false)
     // 父组件传入的 onSelect，为了获取类型

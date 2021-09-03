@@ -654,6 +654,11 @@ debug@^4.1.0, debug@^4.3.2:
   dependencies:
     ms "2.1.2"
 
+decode-uri-component@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.nlark.com/decode-uri-component/download/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+
 dot-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npm.taobao.org/dot-case/download/dot-case-3.0.4.tgz"
@@ -698,6 +703,11 @@ estree-walker@^2.0.1:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/estree-walker/download/estree-walker-2.0.2.tgz?cache=0&sync_timestamp=1611956983677&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Festree-walker%2Fdownload%2Festree-walker-2.0.2.tgz"
   integrity sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=
+
+filter-obj@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/filter-obj/download/filter-obj-1.1.0.tgz?cache=0&sync_timestamp=1630004180503&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffilter-obj%2Fdownload%2Ffilter-obj-1.1.0.tgz#9b311112bc6c6127a16e016c6c5d7f19e0805c5b"
+  integrity sha1-mzERErxsYSehbgFsbF1/GeCAXFs=
 
 follow-redirects@^1.10.0:
   version "1.14.2"
@@ -1034,6 +1044,16 @@ prr@~1.0.1:
   resolved "https://registry.npm.taobao.org/prr/download/prr-1.0.1.tgz"
   integrity sha1-0/wRS6BplaRexok/SEzrHXj19HY=
 
+query-string@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.nlark.com/query-string/download/query-string-7.0.1.tgz?cache=0&sync_timestamp=1624297034221&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fquery-string%2Fdownload%2Fquery-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
+  integrity sha1-Rb0UnPWGqqWC3/x+x6itl90C910=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    filter-obj "^1.1.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
 raf@^3.4.1:
   version "3.4.1"
   resolved "https://registry.npm.taobao.org/raf/download/raf-3.4.1.tgz"
@@ -1217,6 +1237,16 @@ sourcemap-codec@^1.4.4:
   version "1.4.8"
   resolved "https://registry.npm.taobao.org/sourcemap-codec/download/sourcemap-codec-1.4.8.tgz"
   integrity sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=
+
+split-on-first@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/split-on-first/download/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"
+  integrity sha1-9hCv7uOxK84dDDBCXnY5i3gkml8=
+
+strict-uri-encode@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/strict-uri-encode/download/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
+  integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
 styled-components@^5.1.0:
   version "5.3.1"
