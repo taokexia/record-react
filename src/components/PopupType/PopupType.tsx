@@ -16,7 +16,7 @@ export type PopupTypeRef = {
     close: Function;
 }
 
-type TypeItem = {
+export type TypeItem = {
     id: string;
     name: string;
 }

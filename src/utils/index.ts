@@ -8,6 +8,7 @@ const host = 'http://127.0.0.1:7001'
 export const register = (params: any) => axios.post(`${host}/api/user/register`, params);
 export const login = (params: any) => axios.post(`${host}/api/user/login`, params);
 export const getBillList = (page: string | number, currentTime: string, typeId?: string | number) => axios.get(`${host}/api/bill/list?page=${page}&page_size=5&date=${currentTime}&type_id=${typeId || 'all'}`);
+export const postBillAdd = (params: any) => axios.post(`${host}/api/bill/add`, params);
 export const getTypeList = () => axios.get(`${host}/api/type/list`);
 
 export const typeMap: { [propName: number]: { icon: string} } = {

@@ -2,6 +2,8 @@ import dayjs from "dayjs";
 import React, { useEffect, useRef, useState } from "react";
 import { Icon, Pull } from "zarm";
 import BillItem, { BillListItem } from "../../components/BillItem/BillItem";
+import CustomIcon from "../../components/CustomIcon/CustomIcon";
+import PopupAddBill, { PopupAddBillRef } from "../../components/PopupAddBill/PopupAddBill";
 import PopupDate, { PopupDateRef } from "../../components/PopupDate/PopupDate";
 import PopupType, { PopupTypeRef } from "../../components/PopupType/PopupType";
 import { LOAD_STATE, REFRESH_STATE, getBillList } from "../../utils";
@@ -89,6 +91,12 @@ const Home = () => {
     setCurrentTime(item)
   };
 
+  const addRef = useRef<PopupAddBillRef>(); // 添加账单 ref
+  // 添加账单
+  const addToggle = () => {
+    addRef.current && addRef.current.show();
+  };
+
   return (
     <div className={styles.home}>
       <div className={styles.header}>
@@ -137,6 +145,8 @@ const Home = () => {
       </div>
       <PopupType ref={typeRef} onSelect={select} />
       <PopupDate ref={monthRef} mode="month" onSelect={selectMonth} />
+      <PopupAddBill ref={addRef} onReload={refreshData} />
+      <div className={styles.add} onClick={addToggle}><CustomIcon type='tianjia' /></div>
     </div>
   );
 };
