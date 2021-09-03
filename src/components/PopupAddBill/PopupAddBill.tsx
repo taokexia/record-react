@@ -43,7 +43,7 @@ const PopupAddBill = forwardRef<PopupAddBillRef | undefined, PopupAddProps>(
     const [remark, setRemark] = useState(""); // 备注
     const [showRemark, setShowRemark] = useState(false); // 备注输入框展示控制
     const dateRef = useRef<PopupDateRef | undefined>();
-    const [date, setDate] = useState(new Date()); // 日期
+    const [date, setDate] = useState<Date | string>(new Date()); // 日期
     const [currentType, setCurrentType] = useState<Partial<TypeItem>>({}); // 当前选中账单类型
     const [expense, setExpense] = useState<Array<TypeItem>>([]); // 支出类型数组
     const [income, setIncome] = useState<Array<TypeItem>>([]); // 收入类型数组
@@ -93,7 +93,7 @@ const PopupAddBill = forwardRef<PopupAddBillRef | undefined, PopupAddProps>(
     };
 
     // 日期选择回调
-    const selectDate = (val: Date) => {
+    const selectDate = (val: string) => {
       setDate(val);
     };
 

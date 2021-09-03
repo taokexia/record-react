@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 
 type PopupDateProps = {
     mode: string; // 日期模式
-    onSelect: Function; // 选择后的回调
+    onSelect: (date: string) => void; // 选择后的回调
 };
 
 export type PopupDateRef = {
