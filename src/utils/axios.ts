@@ -9,10 +9,23 @@ axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 axios.defaults.headers['Authorization'] = `${sessionStorage.getItem('token') || null}`
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
+// 封装获取 cookie 的方法
+function getCookie(name: string){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+    return unescape(arr[2]);
+    else
+    return null;
+}
+
+
 axios.interceptors.request.use(req => {
     const token = sessionStorage.getItem('token');
     if (token) {
         req.headers['Authorization'] = token;
+    }
+    if (req.method === 'POST') {
+        req.headers['x-csrf-token'] = getCookie("csrfToken");
     }
     return req;
 })
