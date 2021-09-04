@@ -24,9 +24,7 @@ axios.interceptors.request.use(req => {
     if (token) {
         req.headers['Authorization'] = token;
     }
-    if (req.method === 'POST') {
-        req.headers['x-csrf-token'] = getCookie("csrfToken");
-    }
+    req.headers['x-csrf-token'] = getCookie("csrfToken");
     return req;
 })
 
