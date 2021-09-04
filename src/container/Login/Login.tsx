@@ -43,7 +43,7 @@ const Login: FunctionComponent = () => {
         });
         // 将 token 写入 sessionStorage
         sessionStorage.setItem("token", data.token);
-        history.push('/');
+        window.location.href = '/'
         Toast.show("登录成功");
       } else {
         if (!verify) {

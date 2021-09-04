@@ -1,12 +1,17 @@
 import axios from './axios'
+const MODE = import.meta.env.MODE // 环境变量
 
 export const get = axios.get
 export const post = axios.post
 
-const host = 'http://127.0.0.1:7001'
+export const host = MODE == 'development' ? 'http://127.0.0.1:7001' : '';
 
 export const register = (params: any) => axios.post(`${host}/api/user/register`, params);
 export const login = (params: any) => axios.post(`${host}/api/user/login`, params);
+export const getUserInfo = () => axios.get(`${host}/api/user/getUserInfo`);
+export const postUserUpdate = (params: any) => axios.post(`${host}/api/user/editUserInfo`, params);
+export const postUserPassword = (params: any) => axios.post(`${host}/api/user/editUserPassword`, params);
+
 export const getBillList = (page: string | number, currentTime: string, typeId?: string | number) => axios.get(`${host}/api/bill/list?page=${page}&page_size=5&date=${currentTime}&type_id=${typeId || 'all'}`);
 export const getBillDetail = (id: string | number) => axios.get(`${host}/api/bill/detail?id=${id}`);
 export const getBillData = (date: string | number) => axios.get(`${host}/api/bill/data?date=${date}`);
