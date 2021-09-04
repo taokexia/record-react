@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Icon, Pull } from "zarm";
 import BillItem, { BillListItem } from "../../components/BillItem/BillItem";
 import CustomIcon from "../../components/CustomIcon/CustomIcon";
+import Empty from "../../components/Empty/Empty";
 import PopupAddBill, { PopupAddBillRef } from "../../components/PopupAddBill/PopupAddBill";
 import PopupDate, { PopupDateRef } from "../../components/PopupDate/PopupDate";
 import PopupType, { PopupTypeRef } from "../../components/PopupType/PopupType";
@@ -141,7 +142,7 @@ const Home = () => {
               <BillItem bill={item} key={index} />
             ))}
           </Pull>
-        ) : null}
+        ) : <Empty />}
       </div>
       <PopupType ref={typeRef} onSelect={select} />
       <PopupDate ref={monthRef} mode="month" onSelect={selectMonth} />

@@ -4,7 +4,7 @@ const MODE = import.meta.env.MODE // 环境变量
 export const get = axios.get
 export const post = axios.post
 
-export const host = MODE == 'development' ? 'http://127.0.0.1:7001' : '';
+export const host = MODE == 'development' ? 'http://127.0.0.1:7001' : 'http://119.91.110.227:7001';
 
 export const register = (params: any) => axios.post(`${host}/api/user/register`, params);
 export const login = (params: any) => axios.post(`${host}/api/user/login`, params);
